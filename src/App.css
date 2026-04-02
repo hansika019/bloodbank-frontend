@@ -1,38 +1,106 @@
-.App {
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.container {
   text-align: center;
+  padding: 20px;
+  color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.count {
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #cfd8dc;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* FORM */
+.form input {
+  margin: 6px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #1e2a33;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* BUTTON */
+button {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  background: #00c6ff;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+button:hover {
+  background: #0072ff;
+  color: white;
+}
+
+/* SEARCH */
+.search {
+  margin: 20px;
+  padding: 12px;
+  width: 260px;
+  border-radius: 10px;
+  border: none;
+  background: #1e2a33;
+  color: white;
+}
+
+/* LIST */
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* CARD */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  margin: 12px;
+  padding: 18px;
+  border-radius: 18px;
+  width: 220px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* BLOOD BADGE */
+.badge {
+  display: inline-block;
+  background: #ff4b5c;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 6px 0;
+  font-weight: bold;
+}
+
+.empty {
+  font-size: 18px;
+  color: #bbb;
+}
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
   }
 }
