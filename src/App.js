@@ -3,16 +3,30 @@ import AuthPage from "./AuthPage";
 import MainPage from "./MainPage";
 
 export default function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  // ✅ Keep user logged in after refresh
+  const [loggedIn, setLoggedIn] = useState(
+    !!localStorage.getItem("token")
+  );
 
+  // ✅ Handle login
   const handleLogin = (token) => {
     localStorage.setItem("token", token);
     setLoggedIn(true);
   };
 
-  if (loggedIn) {
-    return <MainPage />;
-  }
+  // ✅ Handle logout
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setLoggedIn(false);
+  };
 
-  return <AuthPage onLogin={handleLogin} />;
+  return (
+    <>
+      {loggedIn ? (
+        <MainPage onLogout={handleLogout} />
+      ) : (
+        <AuthPage onLogin={handleLogin} />
+      )}
+    </>
+  );
 }
